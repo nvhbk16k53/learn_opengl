@@ -136,7 +136,7 @@ int main(int argc, char **argv)
         // First container
         // =======================
         transform = glm::translate(transform, glm::vec3(0.5f, -0.5f, 0.0f));
-        transform = glm::rotate(transform, (GLfloat)glfwGetTime() * 10.0f, glm::vec3(0.0f, 0.0f, 1.0f));
+        transform = glm::rotate(transform, glm::radians((GLfloat)glfwGetTime() * 10.0f), glm::vec3(0.0f, 0.0f, 1.0f));
         // Get their uniform location and set matrix
         GLint transformLoc = glGetUniformLocation(ourShader.program_, "transform");
         glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(transform));
